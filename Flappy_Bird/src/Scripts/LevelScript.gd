@@ -17,6 +17,10 @@ func update_score():
 	$Score.text = str(Global.score)
 
 func _draw():
+	
+	#var pipe_spawn = pipe.instance()
+	#This had to be removed because it was causing leaks
+	
 	myTimer.wait_time = rand_range(0.5, 0.8)
 	
 #Handle pipe spawning

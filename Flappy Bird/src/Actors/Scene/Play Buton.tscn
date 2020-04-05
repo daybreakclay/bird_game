@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="TextureButton" type="TextureButton"]
+modulate = Color( 0.807843, 0.105882, 0.105882, 1 )
+margin_left = 369.0
+margin_top = 184.0
+margin_right = 703.0
+margin_bottom = 381.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

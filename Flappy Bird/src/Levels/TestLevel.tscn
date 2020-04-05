@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/Actors/a_Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Scene/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Scripts/LevelScript.gd" type="Script" id=3]
+[ext_resource path="res://src/Actors/Scene/Floor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Scripts/Scene/Resume_Button.gd" type="Script" id=5]
+[ext_resource path="res://src/Scripts/Pause.gd" type="Script" id=6]
+[ext_resource path="res://assets/UI/resume_button.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/restart_button.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 93 )
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 326, 255 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 256, 87 )
+shape = SubResource( 1 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Grass" parent="." instance=ExtResource( 4 )]
+layer = 128
+
+[node name="Score" type="Label" parent="."]
+margin_left = 46.0
+margin_top = 38.0
+margin_right = 152.0
+margin_bottom = 52.0
+rect_scale = Vector2( 2.22594, 2.24334 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="CanvasLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.109804, 0.0823529, 0.0823529, 0.623529 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume_Button" type="Node2D" parent="CanvasLayer/Pause"]
+script = ExtResource( 5 )
+
+[node name="sResume_Button" type="Sprite" parent="CanvasLayer/Pause/Resume_Button"]
+position = Vector2( 305, 302 )
+texture = ExtResource( 7 )
+
+[node name="Resume_Texture_Button" type="TextureButton" parent="CanvasLayer/Pause/Resume_Button"]
+margin_left = 195.0
+margin_top = 189.0
+margin_right = 418.0
+margin_bottom = 412.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sRestart_Button" type="Sprite" parent="CanvasLayer/Pause/Resume_Button"]
+position = Vector2( 719, 303 )
+texture = ExtResource( 8 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

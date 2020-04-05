@@ -3,7 +3,10 @@ extends Node2D
 onready var myTimer = get_node("Timer")
 #Control Pipe Spawn
 ##Preload Pipe asset
-onready var pipe = preload("res://src/Actors/Pipe.tscn")
+
+var pipe = load("res://src/Actors/Pipe.tscn")
+var pipe_pos = rand_range(400, 250)
+
 var time_keeper = 0
 
 func _ready():
@@ -14,14 +17,17 @@ func update_score():
 	$Score.text = str(Global.score)
 
 func _draw():
-	var pipe_spawn = pipe.instance()
-	var pipe_pos = rand_range(400, 250)
 	myTimer.wait_time = rand_range(0.5, 0.8)
 	
 #Handle pipe spawning
 	if(Global.player_ready):
+		
+		var pipe_spawn = pipe.instance()
 		pipe_spawn.position.y = pipe_pos
 		add_child(pipe_spawn)
+		print("Pipe added from Level Script ", time_keeper)
+	#if(Global.game_over):
+	#	pipe_spawn.free()
 
 
 func _process(_delta):

@@ -1,6 +1,6 @@
 extends Control
 #Toggle pause state based on Global.is_paused
-func _process(delta):
+func _process(_delta):
 	get_tree().paused = Global.is_paused
 	visible = Global.is_paused
 

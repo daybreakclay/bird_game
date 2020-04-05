@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="TextureButton" type="TextureButton"]
+[node name="Texture_Button_gameOver" type="TextureButton"]
 modulate = Color( 0.807843, 0.105882, 0.105882, 1 )
 margin_left = 369.0
 margin_top = 184.0

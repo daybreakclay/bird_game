@@ -4,17 +4,17 @@
 [ext_resource path="res://src/Actors/Scene/Play Buton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Scripts/Game Over.gd" type="Script" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D_gameOverScene" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="sGame_Over_Button" type="Sprite" parent="."]
 position = Vector2( 505, 298 )
 texture = ExtResource( 1 )
 
-[node name="TextureButton" parent="." instance=ExtResource( 2 )]
+[node name="Texture_But_gameOver" parent="." instance=ExtResource( 2 )]
 margin_left = 210.0
 margin_top = 80.0
 margin_right = 693.0
 margin_bottom = 505.0
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Texture_But_gameOver" to="." method="_on_TextureButton_pressed"]

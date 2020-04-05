@@ -3,14 +3,13 @@
 [ext_resource path="res://assets/Scene/ground.png" type="Texture" id=1]
 [ext_resource path="res://src/Scripts/Scene/Grass.gd" type="Script" id=2]
 
-
-[node name="Grass" type="ParallaxBackground"]
+[node name="Parallax_Background_grass" type="ParallaxBackground"]
 script = ExtResource( 2 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="Parallax_Layer_grass" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2( 2000, 0 )
 
-[node name="Grass" type="Sprite" parent="ParallaxLayer"]
+[node name="sGrass" type="Sprite" parent="Parallax_Layer_grass"]
 position = Vector2( 0, 55 )
 texture = ExtResource( 1 )
 centered = false

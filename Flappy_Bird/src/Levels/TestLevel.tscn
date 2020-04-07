@@ -82,5 +82,6 @@ __meta__ = {
 [node name="sRestart_Button" type="Sprite" parent="CanvasLayer/Pause/Resume_Button"]
 position = Vector2( 719, 303 )
 texture = ExtResource( 8 )
+[connection signal="jump" from="." to="Player" method="_on_TestLevel_jump"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

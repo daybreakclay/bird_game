@@ -1,4 +1,6 @@
 extends Node2D
+signal jump
+
 #Comment to test Git Control
 onready var myTimer = get_node("Timer")
 #Control Pipe Spawn
@@ -33,6 +35,12 @@ func _draw():
 	#if(Global.game_over):
 	#	pipe_spawn.free()
 
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			print("Index ", event.index)
+			emit_signal("jump")
+
 
 func _process(_delta):
 	update_score()
@@ -50,3 +58,4 @@ func _on_Timer_timeout():
 func _on_Area2D_body_entered(_body):
 	Global.score = Global.score + 1
 	print("The score is ", Global.score)
+

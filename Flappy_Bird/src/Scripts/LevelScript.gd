@@ -7,7 +7,6 @@ onready var myTimer = get_node("Timer")
 ##Preload Pipe asset
 
 var pipe = load("res://src/Actors/Pipe.tscn")
-var pipe_pos = rand_range(400, 250)
 
 var time_keeper = 0
 
@@ -25,15 +24,13 @@ func _draw():
 	
 	myTimer.wait_time = rand_range(0.5, 0.8)
 	
+	var pipe_pos = rand_range(400, 250)
 #Handle pipe spawning
 	if(Global.player_ready):
-		
 		var pipe_spawn = pipe.instance()
 		pipe_spawn.position.y = pipe_pos
 		add_child(pipe_spawn)
 		print("Pipe added from Level Script ", time_keeper)
-	#if(Global.game_over):
-	#	pipe_spawn.free()
 
 func _input(event):
 	if event is InputEventScreenTouch:

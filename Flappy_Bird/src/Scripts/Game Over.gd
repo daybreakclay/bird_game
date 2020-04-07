@@ -6,6 +6,14 @@ func _input(_event):
 		Global.state_controller()
 
 
-func _on_TextureButton_pressed():
+func _on_button_start_pressed():
 	Global.state_controller()
 	
+
+
+func _on_button_options_pressed():
+	pass # Replace with function body.
+
+
+func _on_button_credits_pressed():
+	pass # Replace with function body.

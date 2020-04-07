@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kalea_bird.png-935438f0bdbf96feb11e0723031ba542.stex"
+path="res://.import/kalea_bird.png-65d4a3bc79260f45a1b800deea6926b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kalea_bird.png"
-dest_files=[ "res://.import/kalea_bird.png-935438f0bdbf96feb11e0723031ba542.stex" ]
+source_file="res://assets/kalea_bird.png"
+dest_files=[ "res://.import/kalea_bird.png-65d4a3bc79260f45a1b800deea6926b8.stex" ]
 
 [params]
 

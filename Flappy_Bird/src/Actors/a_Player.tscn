@@ -16,11 +16,10 @@ __meta__ = {
 }
 
 [node name="sPlayer" type="Sprite" parent="."]
-position = Vector2( -2, 3.8147e-06 )
 scale = Vector2( 0.68, 0.68 )
 texture = ExtResource( 2 )
 
 [node name="Col_Shape2d_player" type="CollisionShape2D" parent="."]
-position = Vector2( -9, 3 )
+position = Vector2( -7, 0 )
 shape = SubResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
